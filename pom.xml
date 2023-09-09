@@ -30,6 +30,15 @@
         </dependency>
 
     </dependencies>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.9.0.2155</version> <!-- Замените на актуальную версию -->
+            </plugin>
+            <!-- Другие плагины Maven, если есть -->
+        </plugins>
+    </build>
 
 </project>
