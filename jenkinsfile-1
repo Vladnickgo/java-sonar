@@ -1,14 +1,8 @@
-pipeline {
-  agent { label 'мастер' }
-  options {
-    buildDiscarder(logRotator(numToKeepStr: '7'))
-  }
-  stages {
-    stage('Scan') {
-      steps {
-        withSonarQubeEnv(installationName: 'SonarQubeServer') {
-          sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
-        }
+stages {
+  stage('Scan') {
+    steps {
+      withSonarQubeEnv(installationName: 'SonarQubeServer') {
+        sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
       }
     }
   }
