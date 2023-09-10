@@ -4,7 +4,11 @@ pipeline {
       stage('Scan') {
         steps {
           withSonarQubeEnv(installationName: 'Project1') {
-            bat "mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.1.2184:sonar -Dsonar.token='119b8585101da3a83e30c8a40876bc5cf0'"
+            mvn clean verify sonar:sonar \
+              -Dsonar.projectKey=Project1 \
+              -Dsonar.projectName='Project1' \
+              -Dsonar.host.url=http://localhost:9000 \
+              -Dsonar.token=sqp_ed46a3bf1dd6b7524c9b6165374dfad25f0e6f72
           }
         }
       }
