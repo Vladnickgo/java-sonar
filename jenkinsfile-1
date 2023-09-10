@@ -9,8 +9,7 @@ pipeline {
               -Dsonar.projectKey=Project1
               -Dsonar.projectName='Project1'
               -Dsonar.host.url=http://localhost:9000
-              -Dsonar.sonar.login='admin'
-              -Dsonar.sonar.password='c17e430b62344f8c9d5994f37ba71572'
+              -Dsonar.sonar.token='adminId'
             """
           }
         }
