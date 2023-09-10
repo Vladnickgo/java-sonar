@@ -4,11 +4,13 @@ pipeline {
       stage('Scan') {
         steps {
           withSonarQubeEnv(installationName: 'Project1') {
-            bat "mvn clean verify sonar:sonar
+            bat """
+             mvn clean verify sonar:sonar
               -Dsonar.projectKey=Project1
               -Dsonar.projectName='Project1'
               -Dsonar.host.url=http://localhost:9000
-              -Dsonar.token=sqp_ed46a3bf1dd6b7524c9b6165374dfad25f0e6f72"
+              -Dsonar.token=sqp_ed46a3bf1dd6b7524c9b6165374dfad25f0e6f72
+            """
           }
         }
       }
