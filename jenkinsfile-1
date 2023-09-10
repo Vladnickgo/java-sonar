@@ -4,7 +4,7 @@ pipeline {
       stage('Scan') {
         steps {
           withSonarQubeEnv(installationName: 'Project1') {
-            bat "mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.1.2184:sonar -Dsonar.token=119b8585101da3a83e30c8a40876bc5cf0"
+            bat "mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.1.2184:sonar -Dsonar.token='119b8585101da3a83e30c8a40876bc5cf0'"
           }
         }
       }
